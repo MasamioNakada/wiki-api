@@ -1,4 +1,6 @@
+from http.client import responses
 from utils import to_dict
+from respuesta import Respuesta
 
 #FastAPI
 from fastapi import FastAPI, status
@@ -23,4 +25,6 @@ async def home(
     res: str = Body(...),
 ):
     response = to_dict(res)
-    return {"reply": response["app"]}
+    print(response)
+    if Respuesta(response) != None:
+        return {"reply": Respuesta(response)}
