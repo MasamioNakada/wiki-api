@@ -12,4 +12,3 @@ class Message(Base):
     group_name = Column(String)
     message = Column(String)
     time_created = Column(DateTime(timezone=True), server_default=datetime.now(tz=timezone('America/Lima')))
-
