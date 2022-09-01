@@ -1,10 +1,8 @@
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, DateTime, Integer, String
 from sqlalchemy.sql import func
+from session import Base
 from datetime import datetime
 from pytz import timezone
-
-Base  = declarative_base()
 
 class Message(Base):
     __tablename = "unac-sentiment"
