@@ -1,4 +1,3 @@
-from http.client import responses
 from utils import to_dict
 from respuesta import Respuesta
 
@@ -21,9 +20,7 @@ def home():
     status_code=status.HTTP_200_OK,
     tags = ['Home']
 )
-async def home(
-    res: str = Body(...),
-):
+async def home(res: str = Body(...)):
     response = to_dict(res)
     print(response)
     if Respuesta(response) != None:
